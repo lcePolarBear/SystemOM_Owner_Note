@@ -1,2 +1,2 @@
 # Linux_Basic_Note
-记录Linux基础知识的学习内容
+* [Linux的根目录都有啥？](https://github.com/lcePolarBear/Linux_Basic_Note/blob/master/黑马Linux课程收录/Linux的根目录都有啥.md)
