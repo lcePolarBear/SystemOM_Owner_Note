@@ -1,6 +1,7 @@
 
 vi /etc/sysconfig/network-scripts/ifcfg-ens192
 
+```
 TYPE="Ethernet"
 PROXY_METHOD="none"
 BROWSER_ONLY="no"
@@ -20,5 +21,6 @@ NAME="ens33"
 UUID="95b614cd-79b0-4755-b08d-99f1cca7271b"
 DEVICE="ens33"
 ONBOOT="yes"
+```
 
 网关地址和 dns 服务器地址 都可以从 Windows 的网络适配器信息中找到

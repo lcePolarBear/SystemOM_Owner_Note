@@ -13,6 +13,10 @@ __selinux__
     ```
     getenforce
     ```
+- 暂时禁用
+    ```
+    setenforce 0
+    ```
 - 关闭 selinux
     ```
     vi /etc/selinux/config
