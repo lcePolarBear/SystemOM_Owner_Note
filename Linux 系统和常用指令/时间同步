@@ -1,0 +1,1 @@
+ntpdate time.windows.com
