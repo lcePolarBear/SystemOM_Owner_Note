@@ -14,7 +14,7 @@
         - 使用 `ntpdate time.windows.com` 命令能够实现时间同步
         - 使用管道将内容写入时是覆盖模式而非追加，故要使用 `crontab -l` 写入原来的任务计划
 
-- 禁用selinux
+- 禁用 selinux
     ```
     sed -i '/SELINUX/{s/permissive/disabled/}' /etc/selinux/config
     ```
@@ -38,38 +38,53 @@
         echo 'export HISTTIMEFORMAT="%F %T `whoami` "' >> /etc/bashrc
     fi
     ```
-    - history 命令用来显示历史命令
+    - `history` 命令用来显示历史命令，通过引入 HISTTIMEFORMAT 变量实现显示操作时间
     
-- SSH超时时间
-if ! grep "TMOUT=600" /etc/profile &>/dev/null; then
-    echo "export TMOUT=600" >> /etc/profile
-fi
+- SSH 超时时间
+    ```
+    if ! grep "TMOUT=600" /etc/profile &>/dev/null; then
+        echo "export TMOUT=600" >> /etc/profile
+    fi
+    ```
 
-- 禁止root远程登录
-sed -i 's/-PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+- 禁止 root 远程登录(慎用！执行前确认可以通过别的 root 权限账户可以登录)
+    ```
+    sed -i 's/#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+    ```
 
-- 禁止定时任务向发送邮件
-sed -i 's/^MAILTO=root/MAILTO=""/' /etc/crontab 
+- 禁止定时任务发送邮件
+    ```
+    sed -i 's/^MAILTO=root/MAILTO=""/' /etc/crontab 
+    ```
+    - /var/mail/ 目录下存放发送的邮件
+    - `&>/dev/null` 指令就是为了阻止产生日志文件而避免产生邮件
+    - 将以 ^MAILTO=root 开头的这一行内容替换为 MAILTO=""
 
 - 设置最大打开文件数
-if ! grep "* soft nofile 65535" /etc/security/limits.conf &>/dev/null; then
+    ```
+    if ! grep "* soft nofile 65535" /etc/security/limits.conf &>/dev/null; then
     cat >> /etc/security/limits.conf << EOF
-    * soft nofile 65535
-    * hard nofile 65535
+    *   soft    nofile  65535
+    *   hard    nofile  65535
     EOF
-fi
+    fi
+    ```
 
 - 系统内核优化
-cat >> /etc/sysctl.conf << EOF
-net.ipv4.tcp_syncookies = 1
-net.ipv4.tcp_max_tw_buckets = 20480
-net.ipv4.tcp_max_syn_backlog = 20480
-net.core.netdev_max_backlog = 262144
-net.ipv4.tcp_fin_timeout = 20  
-EOF
-
+    ```
+    cat >> /etc/sysctl.conf << EOF
+    net.ipv4.tcp_syncookies = 1
+    net.ipv4.tcp_max_tw_buckets = 20480
+    net.ipv4.tcp_max_syn_backlog = 20480
+    net.core.netdev_max_backlog = 262144
+    net.ipv4.tcp_fin_timeout = 20  
+    EOF
+    ```
 - 减少SWAP使用
-echo "0" > /proc/sys/vm/swappiness
-
+    ```
+    echo "0" > /proc/sys/vm/swappiness
+    ```
 - 安装系统性能分析工具及其他
-yum install gcc make autoconf vim sysstat net-tools iostat iftop iotp lrzsz -y
+    ```
+    yum install gcc make autoconf vim sysstat net-tools iostat iftop iotp lrzsz -y
+    ```
