@@ -81,7 +81,7 @@
     net.ipv4.tcp_fin_timeout = 20  
     EOF
     ```
-- 减少SWAP使用
+- 减少 SWAP 使用
     ```
     echo "0" > /proc/sys/vm/swappiness
     ```
