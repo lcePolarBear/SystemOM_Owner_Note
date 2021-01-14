@@ -7,4 +7,6 @@ __常用指令__
 * [关闭防火墙](https://github.com/lcePolarBear/Linux_Basic_Note/blob/master/Linux%20系统和常用指令/禁用防火墙和%20selinux.md)
 
 __Shell 脚本示例__
-- [Linux 系统配置初始化](https://github.com/lcePolarBear/Linux_Basic_Note/blob/master/Shell%20%E8%84%9A%E6%9C%AC%E7%A4%BA%E4%BE%8B/Linux%20%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E5%88%9D%E5%A7%8B%E5%8C%96.md)
+- [系统配置初始化](https://github.com/lcePolarBear/Linux_Basic_Note/blob/master/Shell%20%E8%84%9A%E6%9C%AC%E7%A4%BA%E4%BE%8B/Linux%20%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE%E5%88%9D%E5%A7%8B%E5%8C%96.md)
+- [发送告警邮件](https://github.com/lcePolarBear/Linux_Basic_Note/blob/master/Shell%20%E8%84%9A%E6%9C%AC%E7%A4%BA%E4%BE%8B/Linux%20%E7%B3%BB%E7%BB%9F%E5%8F%91%E9%80%81%E5%91%8A%E8%AD%A6%E9%82%AE%E4%BB%B6.md)
+- [批量创建系统用户](https://github.com/lcePolarBear/Linux_Basic_Note/blob/master/Shell%20%E8%84%9A%E6%9C%AC%E7%A4%BA%E4%BE%8B/%E6%89%B9%E9%87%8F%E5%88%9B%E5%BB%BA%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7.md)
