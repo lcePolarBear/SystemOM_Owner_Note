@@ -6,5 +6,5 @@ __常用指令__
 * [查看系统信息的指令](https://github.com/lcePolarBear/Linux_Basic_Note/blob/master/Linux%20系统和常用指令/对系统进行的操作的指令.md)
 * [关闭防火墙](https://github.com/lcePolarBear/Linux_Basic_Note/blob/master/Linux%20系统和常用指令/禁用防火墙和%20selinux.md)
 
-__Shell 示例__
+__Shell 脚本示例__
 - [Linux 系统配置初始化]()
