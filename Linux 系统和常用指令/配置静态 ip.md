@@ -1,7 +1,6 @@
-
-vi /etc/sysconfig/network-scripts/ifcfg-ens192
-
-```
+### CentOS 设置静态 IP 地址
+```yaml
+# vi /etc/sysconfig/network-scripts/ifcfg-ens192
 TYPE="Ethernet"
 PROXY_METHOD="none"
 BROWSER_ONLY="no"
@@ -20,6 +19,22 @@ NAME="ens33"
 UUID="95b614cd-79b0-4755-b08d-99f1cca7271b"
 DEVICE="ens33"
 ONBOOT="yes"
+```
+
+### Ubuntu 设置静态 IP 地址
+```yaml
+# /etc/netplan/xxx.yaml
+network:
+    ethernets:
+        ens33:
+            dhcp4: no
+            addresses: [192.168.1.100/24]
+            optional: true
+            gateway4: 192.168.1.1
+            nameservers:
+                    addresses: [223.5.5.5,223.6.6.6]
+ 
+    version: 2
 ```
 
 网关地址和 dns 服务器地址 都可以从 Windows 的网络适配器信息中找到
